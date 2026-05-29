@@ -1,5 +1,6 @@
 ---
 name: clj-replace
+version: 1.0.0
 description: Use when replacing Clojure or Babashka code but str_replace fails due to formatting differences - compares S-expression structure instead
 ---
 

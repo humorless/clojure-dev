@@ -1,5 +1,6 @@
 ---
 name: clj-debug
+version: 1.0.0
 description: "Use when debugging Clojure or Babashka code, especially before adding log statements or println - redirects to REPL-based inline inspection instead"
 compatibility: Requires /brepl skill access, works with Integrant-based systems
 ---

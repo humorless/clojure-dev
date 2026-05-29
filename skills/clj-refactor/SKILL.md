@@ -1,5 +1,6 @@
 ---
 name: clj-refactor
+version: 1.0.0
 description: Scan files for mechanism/policy separation opportunities
 ---
 

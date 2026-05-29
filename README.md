@@ -2,6 +2,8 @@
 
 A collection of specialized Claude Code skills that help AI agents write, debug, and refactor Clojure code efficiently. These skills address the unique challenges of writing and maintaining Clojure in an AI-driven workflow.
 
+> **🎉 Version 1.0.0 Released** — All five skills are now production-ready! See [CHANGELOG](#changelog) for details on the improvements in this release.
+
 ## Why These Skills?
 
 These skills **change how Claude approaches Clojure development** — they're not just informational guides, but behavioral redirects validated through real-world testing.
@@ -139,9 +141,37 @@ These skills follow key principles:
 - **Optional Dependencies**: Core functionality works standalone; extras enhance capability
 - **AI-Friendly**: Structured output, consistent interfaces, reduced context overhead
 
+## Changelog
+
+### 1.0.0 Release (2026-05-29)
+
+All skills are now at version 1.0.0! Here's what's included:
+
+- **clj-debug**: [v1.0.0](./skills/clj-debug/CHANGELOG.md)
+  - ✨ **Major improvement**: Enhanced inline def pattern with Graphviz DOT workflow visualization
+  - Better alignment with Borkdude's debugging approach
+  - Discovery narrative flows from data observation to hypothesis
+  - Explicit 3-step workflow emphasizing REPL verification before source modification
+  - Evaluated against real-world debugging scenarios
+
+- **clj-discover**: [v1.0.0](./skills/clj-discover/CHANGELOG.md)
+  - Initial release: Systematic API discovery and exploration
+
+- **clj-replace**: [v1.0.0](./skills/clj-replace/CHANGELOG.md)
+  - Initial release: Structural S-expression matching and replacement
+
+- **clj-refactor**: [v1.0.0](./skills/clj-refactor/CHANGELOG.md)
+  - Initial release: Mechanism-policy separation opportunities
+
+- **clj-skill-eval**: [v1.0.0](./skills/clj-skill-eval/CHANGELOG.md)
+  - Initial release: Rigorous skill validation framework
+
+For detailed changes in each skill, see the individual CHANGELOG.md files in the skills/ directory.
+
 ## Credits
 
 - **brepl** by [@licht1stein](https://github.com/licht1stein) — https://github.com/licht1stein/brepl
 - **rewrite-clj** for structural Clojure parsing — https://github.com/clj-commons/rewrite-clj
 - **Improve your code by separating mechanism from policy** by Arne Brasseur — https://lambdaisland.com/blog/2022-03-10-mechanism-vs-policy
 - **"One Year of LLM Usage with Clojure"** by Ivan Willig — https://www.iwillig.me/blog/one-year-of-llm-usage-with-clojure/#skills-prompts-and-opencode
+- **Inline def debugging** by Michiel Borkent — https://blog.michielborkent.nl/inline-def-debugging.html
