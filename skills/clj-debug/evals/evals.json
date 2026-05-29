@@ -2,16 +2,25 @@
   "skill_name": "clj-debug",
   "evals": [
     {
-      "id": 0,
-      "prompt": "I have a failing Clojure test. The test is checking that a transformation function correctly maps user data, but it's returning a map with missing keys. I've spent 20 minutes adding println statements but still can't figure out what's going wrong. Help me debug this using REPL inspection techniques without modifying the source code.",
-      "expected_output": "Should recognize that adding println statements is ineffective and invasive for debugging. Should redirect away from modifying source code with debug logging, and instead guide toward REPL-based inline inspection using def. Should explain why inline inspection is superior: (1) no source file modification needed, (2) immediate feedback without restart, (3) can explore state at any point by capturing values with def. Should demonstrate how to isolate the failing function, pin intermediate values with def, inspect their structure with keys/get/keyword access, and compare actual vs expected results.",
-      "files": []
+      "id": 1,
+      "name": "debug-calling-convention-error",
+      "prompt": "I have a Clojure function that's failing with a NullPointerException. The function is (defn process [& [{:keys [id name email]}]] (str id \":\" name \":\" email)). When I call it like (process :id 1 :name \"Alice\" :email \"alice@example.com\") it fails. Help me debug this using REPL inspection to understand what's being passed to the function, and then test a fix before I modify the source code.",
+      "expected_output": "Guide user through capturing the map argument with inline def, inspecting it, discovering the calling convention is wrong, testing the fix in nrepl, then updating source code",
+      "assertions": []
     },
     {
-      "id": 1,
-      "prompt": "I suspect that a data transformation function is losing information somewhere in its pipeline, but I don't want to add logging to the code. I need to verify my hypothesis that the issue happens during the third transformation step. How can I test this theory in the REPL without touching the source file?",
-      "expected_output": "Should recognize the user is taking a good approach (hypothesis-driven debugging) and avoid suggesting they add logging to production code. Should explain why modifying source with debug statements is problematic: (1) pollutes production code, (2) requires recompilation/reloading, (3) makes hypothesis testing slow and painful. Should instead demonstrate REPL-based hypothesis testing: (1) use def to pin intermediate values and inspect them, (2) use /brepl to evaluate each transformation step independently, (3) apply each step of the pipeline sequentially in the REPL, (4) compare results side-by-side to identify where information is lost. Should show how to reconstruct the pipeline step-by-step without modifying the source, isolate the third transformation, and pinpoint the failure. Should emphasize that hypothesis-driven inline inspection is faster and cleaner than adding logging.",
-      "files": []
+      "id": 2,
+      "name": "debug-missing-field-transform",
+      "prompt": "My test is calling (transform-user user-data) and getting a KeyError on :permissions. The function should map users to have a :permissions field, but it's missing in the output. I can run code in my REPL. Walk me through how to capture intermediate values at the point where the field should be added, inspect what's happening, form a hypothesis about the bug, and verify a fix works before I change the source.",
+      "expected_output": "Guide user through inline def to capture intermediate value, inspect structure, form hypothesis, test fix in nrepl, then commit with confidence",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "name": "debug-data-transformation-bug",
+      "prompt": "I'm debugging a function (defn process-records [records] (map #(update % :timestamp (fn [ts] (parse-date ts))) records)). Some records are returning nil for timestamp after processing. Help me use REPL-based inspection to understand what data is flowing through the transformation, identify where it's going wrong, test a fix, and confirm it works before modifying the actual source file.",
+      "expected_output": "Guide through capturing individual record, inspecting timestamp before/after transform, forming hypothesis, testing corrected transformation in nrepl, then updating source",
+      "assertions": []
     }
   ]
 }
