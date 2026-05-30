@@ -1,0 +1,29 @@
+{
+  "name": "clj-native-agent",
+  "version": "1.0.0",
+  "description": "AI-native skills for Clojure development with Coding Agent",
+  "author": "Laurence Chen <humorless@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/humorless/clj-native-agent.git"
+  },
+  "keywords": [
+    "clojure",
+    "claude",
+    "ai",
+    "debugging",
+    "refactoring",
+    "skills"
+  ],
+  "skills": [
+    "skills/clj-debug",
+    "skills/clj-discover",
+    "skills/clj-replace",
+    "skills/clj-refactor",
+    "skills/clj-skill-eval"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

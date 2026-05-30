@@ -20,6 +20,10 @@ These skills **change how Claude approaches Clojure development** — they're no
 - **clj-replace** redirects from text-based matching → structural S-expression comparison
 - **clj-refactor** redirects from accepting code as-is → separating mechanism and policy
 
+## Background & Motivation
+
+For a deeper dive into the thinking behind clj-native-agent, see ["Agent Skills for Clojure Development"](https://humorless.github.io/posts-output/agent-skill).
+
 ## Available Skills
 
 ### clj-discover
